@@ -44,12 +44,16 @@ console.log('Second animal is', secondAnimal);
 //      You'll need to console.log `animalArray` and `lastAnimal` to make
 //      sure that your code does what you want. (Never trust your code until
 //      you have proof that it works!)
-let lastAnimal = animalArray[animalArray.length - 1];
-console.log('All animals', animalArray);
-console.log('Last animal is', lastAnimal);
+
+let lastAnimal = animalArray[3];
+console.log('Last animal', lastAnimal);
 
 // 3.c. (STRETCH) TODO: Refactor 3.b to use the `animalArray` variable's .length
 //       property, rather than the exact (hardcoded) index number of the last item.
+
+let anotherLastAnimal = animalArray[animalArray.length - 1];
+console.log('All animals', animalArray);
+console.log('Last animal is', anotherLastAnimal);
 
 // Adding & Removing Array Items
 console.log('--- 4. Adding and removing array items ---');
@@ -72,13 +76,17 @@ let animalToUnshift = 'walrus';
 animalArray.unshift(animalToUnshift);
 console.log(`Added an animal to beginning: ${animalArray}`);
 
-favoriteFoods.pop(dessert); // remove desert at the end
-favoriteFoods.unshift(dessert); // add desert back to the beginning
-console.log('But I want dessert first!', favoriteFoods);
+// favoriteFoods.pop(dessert); // remove desert at the end
+// favoriteFoods.unshift(dessert); // add desert back to the beginning
+// console.log('But I want dessert first!', favoriteFoods);
 
 // 4.b. TODO: Create a variable `entree` and assign it a string value of
 //      an entree that you enjoy.
 //      Add the `entree` to the beginning of your `favoriteFoods` array.
+
+let entree = 'mac and cheese';
+favoriteFoods.unshift(entree);
+console.log('Add me some mac and cheese, yo:', favoriteFoods);
 
 // Example: Remove the last animal by using the Array.pop method.
 let removedAnimal = animalArray.pop();
@@ -100,13 +108,16 @@ removedAnimal = animalArray.shift();
 console.log('Removed the first animal', removedAnimal);
 console.log('The animals are now', animalArray);
 
-console.log('All the colors are:', colors);
-console.log('Last color:', colors.pop());
-console.log('Colors with teal', colors);
+let lastColor = colors.pop();
+console.log('Last color:', lastColor);
+console.log('Colors without teal:', colors);
 
 // 4.d. TODO: Remove the first value from the `colors` array and store it
 //      inside a new variable called `firstColor`.
 //      To verify that your code worked, console.log `firstColor`!
+
+let firstColor = colors.shift();
+console.log('First color in the list is:', firstColor);
 
 // STRETCH GOALS:
 
@@ -114,9 +125,23 @@ let gems = ['Topaz', 'Citrine', 'Diamond', 'Emerald', 'Iolite', 'Tanzanite'];
 
 // 5.a (STRETCH) TODO: Replace the second gem with 'Tourmaline'.
 //      Remember to console.log the updated array.
+console.log('All gems:', gems);
+gems.splice(1, 1, 'Tourmaline');
+console.log('New gem list:', gems);
 
 // 5.b (STRETCH) TODO: Sort your gems array in reverse alphabetical order.
 //     Please console.log the sorted array.
+// console.log(gems.reverse());
+console.log('Reverse sorted gems:', gems.sort().reverse());
+
+// let reverseGemsArray = [];
+// for (let i = gems.length; i >= 0; i--) {
+//   const valIndex = gems[i];
+//   console.log(i);
+//   reverseGemsArray.push(valIndex);
+// }
+
+// console.log('Another reverse', reverseGemsArray);
 
 // 5.c (STRETCH) TODO: Create a variable `gemString` and assign it a string value
 //     that's made up of each value from the `gems` array, but separated by the
@@ -126,11 +151,17 @@ let gems = ['Topaz', 'Citrine', 'Diamond', 'Emerald', 'Iolite', 'Tanzanite'];
 //     🔥 You'll need to research the .join Array method. 🔥
 //     Don't forget to console.log `gemString`...
 
+let gemString = gems.join(' and ');
+console.log('Gem string:', gemString);
+
 // 5.d (STRETCH) TODO: Make a new array `colorfulGems` that combines
 //     the gems array with the colors array.
 //     It should look something like:
 //       ['Tourmaline', 'Topaz', 'Tanzanite', 'Iolite', 'Emerald', 'Diamond', 'yellow', 'green']
 //     Now, console.log the new array.
+
+let colorfulGems = [].concat(gems, colors);
+console.log(colorfulGems);
 
 // DO NOT MODIFY
 // Used for automated testing
